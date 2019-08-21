@@ -30,7 +30,7 @@ class WS {
 
 
         $this->server->on('workerstart',function($serv,$id){
-            $redis = new \Redis();
+            $redis = new \Redis();      //使用的是phpredis客户端
             $redis->connect('127.0.0.1', 6379);
             $serv->redis = $redis;      //将redis注册到server中
         });
